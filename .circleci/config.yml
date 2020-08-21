@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  npm-config: cobli/npm-config@1.0.0
+
 jobs:
   test:
     working_directory: ~/repo
@@ -34,9 +37,10 @@ jobs:
 #      - run:
 #          name: Set registry URL
 #          command: npm set registry https://packagecloud.io/armando/node-test-package/npm/
-      - run:
-          name: Authenticate with registry
-          command: echo '//registry.npmjs.org/:_authToken=339a8041-c5ad-43c9-a2db-b005fc11c6a4' > ~/repo/.npmrc
+      - npm-config/set-registry:
+          registry-prurl: //registry.npmjs.org
+          scope: '@your-scope'
+          auth-token: '339a8041-c5ad-43c9-a2db-b005fc11c6a4'
       - run:
           name: Publish package
           command: npm publish
