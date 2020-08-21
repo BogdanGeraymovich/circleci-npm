@@ -7,9 +7,11 @@ jobs:
       - image: circleci/node:10.13.0
     steps:
       - checkout
+
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
+
       - run:
           name: Create NPMRC
           command: echo $NPM_TOKEN > ~/repo/.npmrc
