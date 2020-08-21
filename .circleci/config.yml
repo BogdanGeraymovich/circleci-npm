@@ -7,18 +7,16 @@ jobs:
       - image: circleci/node:10.13.0
     steps:
       - checkout
-
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
-
       - run:
           name: Create NPMRC
           command: echo $NPM_TOKEN > ~/repo/.npmrc
       - run:
           name: NPM Install
           command: npm install
-       - run:
+      - run:
           name: NPM Test
           command: npm test
       - save_cache:
