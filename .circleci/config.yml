@@ -28,6 +28,7 @@ jobs:
     working_directory: ~/repo
     docker:
       - image: circleci/node:10.13.0
+
     steps:
       - attach_workspace:
           at: ~/repo
