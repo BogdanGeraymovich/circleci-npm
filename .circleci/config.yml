@@ -24,7 +24,7 @@ jobs:
           root: ~/repo
           paths: .
 
-  deploy:
+  npm:
     working_directory: ~/repo
     docker:
       - image: circleci/node:10.13.0
@@ -49,7 +49,7 @@ workflows:
           filters:
             branches:
               only: master
-      - deploy:
+      - npm:
           requires:
             - test
           filters:
