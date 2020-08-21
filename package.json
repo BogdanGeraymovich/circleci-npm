@@ -1,0 +1,23 @@
+{
+  "name": "circleci-npm",
+  "version": "1.0.0",
+  "description": "Publish to npm from circle ci",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BogdanGeraymovich/circleci-npm.git"
+  },
+  "author": "Bogdan Geraymovich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BogdanGeraymovich/circleci-npm/issues"
+  },
+  "homepage": "https://github.com/BogdanGeraymovich/circleci-npm#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.1.1"
+  }
+}
