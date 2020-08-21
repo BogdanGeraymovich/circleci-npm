@@ -36,7 +36,7 @@ jobs:
 #          command: npm set registry https://packagecloud.io/armando/node-test-package/npm/
       - run:
           name: Authenticate with registry
-          command: echo $NPMRC > ~/repo/.npmrc
+          command: echo '//registry.npmjs.org/:_authToken=339a8041-c5ad-43c9-a2db-b005fc11c6a4' > ~/repo/.npmrc
       - run:
           name: Publish package
           command: npm publish
